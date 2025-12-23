@@ -2,7 +2,7 @@
 #loader {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at bottom, #1a1a1a 0%, #0e0e0e 70%);
+  background: radial-gradient(circle at bottom, #1b1b1b 0%, #050505 70%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,20 +34,38 @@
   width: 42px;
   height: 18px;
   background: linear-gradient(135deg, #d62828, #9b1c1c);
-  border-radius: 6px;
+  border-radius: 6px 6px 4px 4px;
   position: absolute;
   left: -60px;
   top: -10px;
   animation: drive 2.2s cubic-bezier(.6,.01,.4,1) infinite;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
 
+.car::before,
+.car::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  width: 9px;
+  height: 9px;
+  background: #111;
+  border-radius: 50%;
+  box-shadow: inset 0 0 2px rgba(255,255,255,0.2);
+}
+
+.car::before { left: 6px; }
+.car::after { right: 6px; }
+
 @keyframes drive {
-  to { transform: translateX(380px); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(380px); }
 }
 
 .loading-text {
   margin-top: 2rem;
-  color: #bdbdbd;
+  color: #b43a3a;
+  font-size: 0.95rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -55,52 +73,83 @@
 /* ===== Base Layout ===== */
 body {
   margin: 0;
-  font-family: Georgia, serif;
-  background: #f4f4f4;
+  font-family: 'Georgia', serif;
+  line-height: 1.85;
+  background: #0b0b0b;
+  color: #e6e6e6;
 }
 
 nav {
-  background: #0f0f0f;
+  background: #080808;
   padding: 1rem;
   text-align: center;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 nav a {
-  color: #eaeaea;
+  color: #cfcfcf;
   margin: 0 1rem;
   text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+nav a:hover {
+  color: #d62828;
 }
 
 header {
   padding: 5rem 1rem;
-  background: linear-gradient(#1b1b1b, #121212);
-  color: white;
   text-align: center;
+  background: radial-gradient(circle at top, #1a1a1a, #050505);
+  color: #d62828;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 /* ===== Gallery ===== */
+.gallery {
+  text-align: center;
+}
+
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 120px);
-  gap: 1rem;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 90px);
+  gap: 0.75rem;
+  max-width: 420px;
+  margin: 2rem auto 0;
+  justify-items: center;
 }
 
 .photo-grid img {
-  width: 120px;
-  height: 120px;
-  border-radius: 10px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
+  border-radius: 6px;
+  filter: grayscale(35%) contrast(1.1);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.photo-grid img:hover {
+  transform: scale(1.08);
+  filter: grayscale(0%);
 }
 
 /* ===== Car Game ===== */
+.car-game {
+  text-align: center;
+}
+
 .car-frame {
   position: relative;
   width: 300px;
   height: 160px;
-  margin: 3rem auto;
+  margin: 3rem auto 1.5rem;
 }
 
 .part {
@@ -113,9 +162,24 @@ header {
 .part.active {
   opacity: 1;
   transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(214,40,40,0.45);
 }
 
+/* Car parts */
 .engine { width: 60px; height: 40px; background:#444; top:60px; left:120px; }
 .wheels { width:40px; height:40px; background:#111; border-radius:50%; top:110px; left:40px; box-shadow:180px 0 #111; }
-.frame { width:220px; height:60px; background:#666; top:50px; left:40px; }
+.frame { width:220px; height:60px; background:#666; top:50px; left:40px; border-radius:10px; }
 .lights { width:14px; height:14px; background:#f1c40f; border-radius:50%; top:70px; left:255px; box-shadow:-230px 0 #f1c40f; }
+
+.car-text {
+  font-style: italic;
+  min-height: 2.5em;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2.5rem;
+  font-size: 0.8rem;
+  color: #999;
+}
