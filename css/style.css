@@ -1,9 +1,62 @@
+/* ===== Loader ===== */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at bottom, #1a1a1a 0%, #0e0e0e 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  flex-direction: column;
+}
+
+.road {
+  width: 320px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #777, transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+.road::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to right,
+    #999 0 20px,
+    transparent 20px 40px
+  );
+  opacity: 0.25;
+}
+
+.car {
+  width: 42px;
+  height: 18px;
+  background: linear-gradient(135deg, #d62828, #9b1c1c);
+  border-radius: 6px;
+  position: absolute;
+  left: -60px;
+  top: -10px;
+  animation: drive 2.2s cubic-bezier(.6,.01,.4,1) infinite;
+}
+
+@keyframes drive {
+  to { transform: translateX(380px); }
+}
+
+.loading-text {
+  margin-top: 2rem;
+  color: #bdbdbd;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ===== Base Layout ===== */
 body {
   margin: 0;
+  font-family: Georgia, serif;
   background: #f4f4f4;
-  color: #1f1f1f;
-  font-family: 'Georgia', serif;
-  line-height: 1.85;
 }
 
 nav {
@@ -12,101 +65,49 @@ nav {
   text-align: center;
   position: sticky;
   top: 0;
-  z-index: 10;
 }
 
 nav a {
   color: #eaeaea;
-  margin: 0 1.2rem;
+  margin: 0 1rem;
   text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-}
-
-nav a:hover {
-  opacity: 0.7;
 }
 
 header {
   padding: 5rem 1rem;
-  text-align: center;
-  background: linear-gradient(to bottom, #1b1b1b, #121212);
-  color: #fff;
-}
-
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-section {
-  max-width: 850px;
-  margin: auto;
-  padding: 3.5rem 1.5rem;
-}
-
-.gallery {
+  background: linear-gradient(#1b1b1b, #121212);
+  color: white;
   text-align: center;
 }
 
+/* ===== Gallery ===== */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, 120px);
   gap: 1rem;
-  max-width: 520px;
-  margin: 2rem auto 0;
-  justify-items: center;
+  justify-content: center;
 }
 
 .photo-grid img {
   width: 120px;
   height: 120px;
-  object-fit: cover;
   border-radius: 10px;
-  filter: grayscale(20%);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  object-fit: cover;
 }
 
-.photo-grid img:hover {
-  transform: scale(1.05);
-  filter: grayscale(0%);
-}
-
-
-.poem {
-  background: #ffffff;
-  border-left: 5px solid #111;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-.poem-text {
-  white-space: pre-line;
-  font-style: italic;
-  font-size: 1.05rem;
-}
-
-footer {
-  text-align: center;
-  padding: 2.5rem;
-  font-size: 0.8rem;
-  color: #666;
-}
-.car-game {
-  text-align: center;
-}
-
+/* ===== Car Game ===== */
 .car-frame {
   position: relative;
   width: 300px;
   height: 160px;
-  margin: 3rem auto 1.5rem;
+  margin: 3rem auto;
 }
 
 .part {
   position: absolute;
   opacity: 0.25;
-  transition: opacity 0.4s ease, transform 0.4s ease;
   cursor: pointer;
+  transition: 0.4s;
 }
 
 .part.active {
@@ -114,46 +115,7 @@ footer {
   transform: scale(1.05);
 }
 
-/* Car parts (minimal, symbolic) */
-.engine {
-  width: 60px;
-  height: 40px;
-  background: #444;
-  top: 60px;
-  left: 120px;
-  border-radius: 6px;
-}
-
-.wheels {
-  width: 40px;
-  height: 40px;
-  background: #111;
-  border-radius: 50%;
-  top: 110px;
-  left: 40px;
-  box-shadow: 180px 0 #111;
-}
-
-.frame {
-  width: 220px;
-  height: 60px;
-  background: #666;
-  top: 50px;
-  left: 40px;
-  border-radius: 10px;
-}
-
-.lights {
-  width: 14px;
-  height: 14px;
-  background: #f1c40f;
-  border-radius: 50%;
-  top: 70px;
-  left: 255px;
-  box-shadow: -230px 0 #f1c40f;
-}
-
-.car-text {
-  font-style: italic;
-  min-height: 2.5em;
-}
+.engine { width: 60px; height: 40px; background:#444; top:60px; left:120px; }
+.wheels { width:40px; height:40px; background:#111; border-radius:50%; top:110px; left:40px; box-shadow:180px 0 #111; }
+.frame { width:220px; height:60px; background:#666; top:50px; left:40px; }
+.lights { width:14px; height:14px; background:#f1c40f; border-radius:50%; top:70px; left:255px; box-shadow:-230px 0 #f1c40f; }
