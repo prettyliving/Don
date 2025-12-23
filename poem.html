@@ -2,79 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>The Poem</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Poem for Don</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- LOADER -->
+<div id="loader">
+  <div class="road">
+    <div class="car-loader"></div>
+  </div>
+  <div class="loading-text">Starting engine…</div>
+</div>
+
 <nav>
   <a href="index.html">Home</a>
-  <a href="story.html">The Story</a>
-  <a href="poem.html">The Poem</a>
+  <a href="garage.html">Garage</a>
+  <a href="poem.html">Poem</a>
 </nav>
 
-<section class="poem">
-  <h2>A Poem for Don</h2>
+<section class="poem-wrapper">
+  <section class="poem">
+    <h2>A Poem for Don</h2>
 
-  <p class="poem-text">
+    <p class="poem-text">
 I met you before I knew<br>
-what staying meant. <br>
-Before memory had a spine. <br>
-Before I could name the way <br>
-a life can be held together <br>
-by someone who simply doesn’t leave. <br>
-<br>
-You didn’t arrive with a title. <br>
-No script. <br>
-No obligation written in blood. <br>
-Just hands that showed up. <br>
-Again.<br> 
-And again. <br>
-And again<br> 
-like it was the easiest decision in the world.<br> 
+what staying meant.<br>
+Before memory had a spine.<br>
+Before I could name the way<br>
+a life can be held together<br>
+by someone who simply doesn’t leave.<br><br>
 
-You made ordinary days feel chosen. <br>
-Visits weren’t obligations <br>
-they were events.<br> 
-Time slowed down when you were there<br> 
-as if the world knew<br> 
-this was something worth pausing for.<br> 
-<br>
-You never announced yourself as anything. <br>
-You just were. <br>
-Steady. <br>
-Present.<br> 
-A constant in a life that could’ve tilted<br> 
-but didn’t<br> 
-because you stood where balance was needed. <br>
-<br> 
-I’m twenty now.<br> 
-Old enough to understand<br> 
-that love isn’t noise.<br> 
-It’s consistency. <br>
-It’s the quiet courage<br> 
-of always showing up <br>
-even when no one is keeping score. <br>
-<br> 
-So thank you <br>
-for choosing me<br> 
-without ever having to say you did.<br> 
-For being proof that family<br> 
-is built<br> 
-one kept promise at a time. <br>
-<br>
-And if I don’t say it enough <br>
-know this <br>
-I saw you.<br> 
-I still do.<br> 
-  </p>
+You didn’t arrive with a title.<br>
+No script.<br>
+No obligation written in blood.<br>
+Just hands that showed up.<br>
+Again.<br>
+And again.<br>
+And again<br>
+like it was the easiest decision in the world.<br><br>
 
-  <p class="signature">— Alicia</p>
+You made ordinary days feel chosen.<br>
+Visits weren’t obligations<br>
+they were events.<br>
+Time slowed down when you were there<br>
+as if the world knew<br>
+this was something worth pausing for.<br><br>
+
+You never announced yourself as anything.<br>
+You just were.<br>
+Steady.<br>
+Present.<br>
+A constant in a life that could’ve tilted<br>
+but didn’t<br>
+because you stood where balance was needed.<br><br>
+
+I’m twenty now.<br>
+Old enough to understand<br>
+that love isn’t noise.<br>
+It’s consistency.<br>
+It’s the quiet courage<br>
+of always showing up<br>
+even when no one is keeping score.<br><br>
+
+So thank you<br>
+for choosing me<br>
+without ever having to say you did.<br>
+For being proof that family<br>
+is built<br>
+one kept promise at a time.<br><br>
+
+And if I don’t say it enough<br>
+know this<br>
+I saw you.<br>
+I still do.
+</p>
+
+<span class="signature">— Alicia</span>
+</section>
 </section>
 
 <footer>
   <p>Some things don’t need fixing.</p>
 </footer>
+
+<script>
+  const loader = document.getElementById('loader');
+
+  // Reliable loader hide
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      loader.classList.add('hidden');
+    }, 2600);
+  });
+</script>
 
 </body>
 </html>

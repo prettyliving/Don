@@ -2,48 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For Don</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="loader.js"></script>
+  <title>Garage Car Experience</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- LOADER -->
 <div id="loader">
   <div class="road">
-    <div class="car"></div>
+    <div class="car-loader"></div>
   </div>
   <div class="loading-text">Starting engine…</div>
 </div>
 
+<!-- Navigation -->
 <nav>
   <a href="index.html">Home</a>
-  <a href="story.html">The Story</a>
-  <a href="poem.html">The Poem</a>
+  <a href="garage.html">Garage</a>
+  <a href="poem.html">Poem</a>
 </nav>
 
+<!-- Header / Hero -->
 <header>
-  <h1>Don</h1>
-  <p>The man who stayed.</p>
+  <h1 class="fade-in">Don</h1>
+  <p class="fade-in-delay">The man who stayed.</p>
 </header>
 
+<!-- Gallery Section -->
 <section class="gallery">
   <h2>Moments</h2>
   <div class="photo-grid">
-    <img src="Image/don1.jpg">
-    <img src="Image/don2.jpg">
-    <img src="Image/don3.jpg">
-    <img src="Image/don4.jpeg">
-    <img src="Image/don5.jpeg">
-    <img src="Image/don6.jpg">
-    <img src="Image/don7.jpg">
-    <img src="Image/don8.jpg">
-    <img src="Image/don9.jpg">
+    <img src="Image/don1.jpg" loading="lazy">
+    <img src="Image/don2.jpg" loading="lazy">
+    <img src="Image/don3.jpg" loading="lazy">
+    <img src="Image/don4.jpeg" loading="lazy">
+    <img src="Image/don5.jpeg" loading="lazy">
+    <img src="Image/don6.jpg" loading="lazy">
+    <img src="Image/don7.jpg" loading="lazy">
+    <img src="Image/don8.jpg" loading="lazy">
+    <img src="Image/don9.jpg" loading="lazy">
   </div>
 </section>
 
+<!-- Footer -->
 <footer>
-  <p>Built by Alicia · Age 20</p>
+  <p>You showed up. Again.</p>
 </footer>
+
+<script>
+  const loader = document.getElementById('loader');
+
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      loader.classList.add('hidden');
+    }, 2600);
+  });
+</script>
 
 </body>
 </html>

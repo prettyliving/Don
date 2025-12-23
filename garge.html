@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Weight Test</title>
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/garage.js"></script>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="road">
+    <div class="car-loader"></div>
+  </div>
+  <div class="loading-text">Starting engine…</div>
+</div>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="garage.html">Garage</a>
+  <a href="poem.html">Poem</a>
+</nav>
+
+<header class="garage-header">
+  <h1>The Weight Test</h1>
+  <p>Can it carry what life puts on it?</p>
+</header>
+
+<section class="garage-stage">
+  <div id="car-zone" class="car-zone">
+    <div id="stack-zone" class="stack-zone"></div>
+
+    <div id="car-body" class="car-body"></div>
+    <div class="car-wheel left"></div>
+    <div class="car-wheel right"></div>
+  </div>
+</section>
+
+<section class="weights">
+  <div class="weight" draggable="true" data-weight="Responsibility">Responsibility</div>
+  <div class="weight" draggable="true" data-weight="Commitment">Commitment</div>
+  <div class="weight" draggable="true" data-weight="Time">Time</div>
+  <div class="weight" draggable="true" data-weight="Fear">Fear</div>
+</section>
+
+<p id="garage-text" class="garage-text">
+  Drag the weight onto the car.
+</p>
+
+<footer>
+  <p>Anyone can build a car. Few can carry weight.</p>
+</footer>
+
+</body>
+</html>
