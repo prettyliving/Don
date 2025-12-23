@@ -1,0 +1,17 @@
+<script>
+  const parts = document.querySelectorAll('.part');
+  const text = document.getElementById('car-text');
+
+  parts.forEach(part => {
+    part.addEventListener('click', () => {
+      part.classList.add('active');
+      text.innerText = part.dataset.text;
+
+      if ([...parts].every(p => p.classList.contains('active'))) {
+        setTimeout(() => {
+          text.innerText = "Turns out the car runs because you stayed.";
+        }, 600);
+      }
+    });
+  });
+</script>

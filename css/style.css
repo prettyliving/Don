@@ -45,31 +45,33 @@ section {
   padding: 3.5rem 1.5rem;
 }
 
-.gallery h2 {
+.gallery {
   text-align: center;
-  letter-spacing: 0.1em;
 }
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  max-width: 520px;
+  margin: 2rem auto 0;
+  justify-items: center;
 }
 
 .photo-grid img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-radius: 10px;
-  filter: grayscale(15%);
-  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: grayscale(20%);
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .photo-grid img:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
   filter: grayscale(0%);
 }
+
 
 .poem {
   background: #ffffff;
@@ -88,4 +90,70 @@ footer {
   padding: 2.5rem;
   font-size: 0.8rem;
   color: #666;
+}
+.car-game {
+  text-align: center;
+}
+
+.car-frame {
+  position: relative;
+  width: 300px;
+  height: 160px;
+  margin: 3rem auto 1.5rem;
+}
+
+.part {
+  position: absolute;
+  opacity: 0.25;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  cursor: pointer;
+}
+
+.part.active {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Car parts (minimal, symbolic) */
+.engine {
+  width: 60px;
+  height: 40px;
+  background: #444;
+  top: 60px;
+  left: 120px;
+  border-radius: 6px;
+}
+
+.wheels {
+  width: 40px;
+  height: 40px;
+  background: #111;
+  border-radius: 50%;
+  top: 110px;
+  left: 40px;
+  box-shadow: 180px 0 #111;
+}
+
+.frame {
+  width: 220px;
+  height: 60px;
+  background: #666;
+  top: 50px;
+  left: 40px;
+  border-radius: 10px;
+}
+
+.lights {
+  width: 14px;
+  height: 14px;
+  background: #f1c40f;
+  border-radius: 50%;
+  top: 70px;
+  left: 255px;
+  box-shadow: -230px 0 #f1c40f;
+}
+
+.car-text {
+  font-style: italic;
+  min-height: 2.5em;
 }
