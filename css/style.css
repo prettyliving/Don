@@ -5,33 +5,28 @@ body {
     font-family: Georgia, serif;
     line-height: 1.8;
   }
-  
   nav {
     background: #111;
     padding: 1rem;
     text-align: center;
   }
-  
   nav a {
     color: #fff;
     margin: 0 1rem;
     text-decoration: none;
     font-weight: bold;
   }
-  
   header {
     padding: 4rem 1rem;
     text-align: center;
     background: #222;
     color: #fff;
   }
-  
   section {
     max-width: 800px;
     margin: auto;
     padding: 3rem 1.5rem;
   }
-  
   .placeholder {
     width: 220px;
     height: 220px;
@@ -43,17 +38,14 @@ body {
     margin: 2rem auto;
     font-size: 3rem;
   }
-  
   .poem {
     background: #fff;
     border-left: 6px solid #222;
   }
-  
   .poem-text {
     white-space: pre-line;
     font-style: italic;
   }
-  
   footer {
     text-align: center;
     padding: 2rem;

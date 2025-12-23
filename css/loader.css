@@ -39,10 +39,8 @@
   background: #000;
   border-radius: 50%;
 }
-
 .car::before { left: 4px; }
 .car::after { right: 4px; }
-
 .loading-text {
   color: #fff;
   margin-top: 1rem;
